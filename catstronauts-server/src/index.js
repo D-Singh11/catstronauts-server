@@ -1,8 +1,8 @@
 //TODO
-const {AolloServer} = require('apollo-server');
+const {ApolloServer} = require('apollo-server');
 const typeDefs = require('./schema');
 
-const server = AolloServer({typeDefs});
+const server = new ApolloServer({typeDefs});
 
 server.listen().then(()=>{
     console.log(`
