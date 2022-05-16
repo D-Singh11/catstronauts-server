@@ -21,7 +21,7 @@ type Track{
      "The track's approximate length to complete, in minutes"
     length:Int
      "The number of modules this track contains"
-    moduleCount:Int
+     modulesCount:Int
 }
 
 "Author of a complete Track or a Module"
