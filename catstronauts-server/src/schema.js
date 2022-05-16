@@ -3,7 +3,7 @@ const {gql} = require('apollo-server');
 const typeDefs = gql`
 #Schema definitions go here
 
-"Query type's filds are entry points to graph's data"
+"Query type's fields are entry points to graph's data"
 type Query{
     "Get tracks array for homepage grid"
     tracksForHome:[Track!]!
