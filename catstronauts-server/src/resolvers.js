@@ -1,8 +1,11 @@
 const resolvers = {
     QUERY: {
-        // returns an array of Tracks that will be used to populate
-        // the homepage grid of our web client
-        tracksForHome: () =>{ },
+        // get all tracks, will be used to populate the homepage grid of our web client
+        // dataSources is child object of context. context.dataSources. 
+        // {dataSources} destructures context(third parameter of resolver) to access dataSources
+        tracksForHome: (_, __, {dataSources}) => {
+            return dataSources.tracksAPI.getTracksForHome();
+         },
     }
 };
 
