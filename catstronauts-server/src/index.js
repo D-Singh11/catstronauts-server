@@ -2,6 +2,7 @@
 const {ApolloServer} = require('apollo-server');
 const TracksAPI = require('./data-sources/track-api');
 const typeDefs = require('./schema');
+const resolvers = require('./resolvers');
 
 const mocks = {
     Query:() => ({
@@ -27,7 +28,7 @@ const mocks = {
 
 const server = new ApolloServer({
   typeDefs,
-  mocks,
+  resolvers,
   //Configuring the dataSources option for our ApolloServer to make our RestDataSource API available to all resolvers from their context parameter
   dataSources: () => {
     return {
