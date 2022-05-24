@@ -16,3 +16,5 @@ class TracksAPI extends RESTDataSource {
         return this.get(`author/${authorId}`);
     }
 }
+
+module.exports = TracksAPI;
