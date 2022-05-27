@@ -16,10 +16,15 @@ const resolvers = {
     },
     Track: {
         // get author data for every track by calling tracks-api and using the authorId present in the data returned by Track.author's parent Query.tracksForHome
-        // authorId is child property of context. parent.authorId. 
+        // authorId is child property of parent. parent.authorId. 
         // {authorId} destructures parent(first parameter of resolver) to access authorId
         author: ({authorId}, _, {dataSources}) => {
             return dataSources.tracksAPI.getAuthor(authorId);
+        },
+
+        //get all modules for a single track by calling tracks-api and using the id present in the data returned by Track.modules parent Query.track
+        modules: ({id}, _, {dataSources}) => {
+            return dataSources.tracksAPI.getTrackModules(id);
         }
     }
 };
