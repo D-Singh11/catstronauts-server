@@ -11,7 +11,7 @@ const resolvers = {
         // id is child object of args. args.id
         // {id} destructures args(second parameter of resolver) to access arguments passed to query
          track: (_, {id}, {dataSources}) => {
-             return dataSources.tracksAPI.getTrack({id})
+             return dataSources.tracksAPI.getTrack(id);
          }
     },
     Track: {
