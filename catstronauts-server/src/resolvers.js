@@ -6,6 +6,13 @@ const resolvers = {
         tracksForHome: (_, __, {dataSources}) => {
             return dataSources.tracksAPI.getTracksForHome();
          },
+
+        // get a single track by ID, for the track page
+        // id is child object of args. args.id
+        // {id} destructures args(second parameter of resolver) to access arguments passed to query
+         track: (_, {id}, {dataSources}) => {
+             return dataSources.tracksAPI.getTrack({id})
+         }
     },
     Track: {
         // get author data for every track by calling tracks-api and using the authorId present in the data returned by Track.author's parent Query.tracksForHome
