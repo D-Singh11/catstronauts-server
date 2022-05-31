@@ -12,6 +12,11 @@ const resolvers = {
         // {id} destructures args(second parameter of resolver) to access arguments passed to query
          track: (_, {id}, {dataSources}) => {
              return dataSources.tracksAPI.getTrack(id);
+         },
+         
+         // get a single module by ID, for the module detail page
+         module: (_, {id}, {dataSources}) => {
+             return dataSources.tracksAPI.getModule(id);
          }
     },
     Track: {
