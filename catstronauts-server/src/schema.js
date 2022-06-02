@@ -10,7 +10,7 @@ type Query{
     "Fetch a specific track, provided a track's ID"
     track(id: ID!): Track
     "Fetch a specific module, provided a module's ID"
-    module(id:ID!):Module
+    module(id:ID!): Module!
 }
 
 "A track is a group of Modules that teaches about a specific topic"
