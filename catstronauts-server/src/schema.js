@@ -3,7 +3,7 @@ const {gql} = require('apollo-server');
 const typeDefs = gql`
 #Schema definitions go here
 
-"Query type's fields are entry points to graph's data"
+"Query type's fields are entry points to graph's data for read operations"
 type Query{
     "Get tracks array for homepage grid"
     tracksForHome:[Track!]!
@@ -13,14 +13,20 @@ type Query{
     module(id:ID!): Module!
 }
 
+"Mutation type's fields are entry points to graph's data for write operations"
 type Mutation {
+    "Update the number of views of a Track and returns updated track"
     incrementTrackViews(id:ID!): IncrementTrackViewsResponse!
 }
 
 type IncrementTrackViewsResponse {
+    "Similar to HTTP status code, represents the status of the mutation"
     code: Int!
+    "Indicates whether the mutation was successful"
     status: Boolean!
+    "Human-readable message for the UI"
     message: String!
+    "Newly updated track after a successful mutation"
     track: Track
 }
 
