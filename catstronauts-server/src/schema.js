@@ -14,7 +14,14 @@ type Query{
 }
 
 type Mutation {
-    incrementTrackViews(id:ID!): Track
+    incrementTrackViews(id:ID!): IncrementTrackViewsResponse!
+}
+
+type IncrementTrackViewsResponse {
+    code: Int!
+    status: Boolean!
+    message: String!
+    track: Track
 }
 
 "A track is a group of Modules that teaches about a specific topic"
