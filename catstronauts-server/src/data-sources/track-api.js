@@ -29,6 +29,11 @@ class TracksAPI extends RESTDataSource {
     getModule(moduleId){
         return this.get(`module/${moduleId}`);
     }
+
+    //patch/increment numberOfViews for a single track using trackId
+    incrementTrackViews(trackId) {
+        return this.patch(`/track/${trackId}/numberOfViews`);
+    }
 }
 
 module.exports = TracksAPI;
