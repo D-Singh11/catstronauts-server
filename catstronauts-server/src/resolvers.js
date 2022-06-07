@@ -19,6 +19,16 @@ const resolvers = {
              return dataSources.tracksAPI.getModule(id);
          }
     },
+
+    Mutation: {
+        // increments a track's numberOfViews property using trackId passed to it as args
+        incrementTrackViews: async (_, {id}, {dataSources}) => {
+            const track = await dataSources.tracksAPI.incrementTrackViews(id);
+            console.log(track);
+            return track;
+        }
+    },
+
     Track: {
         // get author data for every track by calling tracks-api and using the authorId present in the data returned by Track.author's parent Query.tracksForHome
         // authorId is child property of parent. parent.authorId. 
