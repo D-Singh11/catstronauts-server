@@ -19,6 +19,7 @@ type Mutation {
     incrementTrackViews(id:ID!): IncrementTrackViewsResponse!
 }
 
+"A custom type to handle response of incrementTrackViews mutation"
 type IncrementTrackViewsResponse {
     "Similar to HTTP status code, represents the status of the mutation"
     code: Int!
