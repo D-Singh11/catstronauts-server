@@ -25,7 +25,12 @@ const resolvers = {
         incrementTrackViews: async (_, {id}, {dataSources}) => {
             const track = await dataSources.tracksAPI.incrementTrackViews(id);
             console.log(track);
-            return track;
+            return {
+                code: 200,
+                success: true,
+                message: `Successfully incremented number of views for track ${id}`,
+                track
+            };
         }
     },
 
