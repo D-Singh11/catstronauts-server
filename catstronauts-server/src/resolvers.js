@@ -25,7 +25,6 @@ const resolvers = {
         incrementTrackViews: async (_, {id}, {dataSources}) => {
             try {
                 const track = await dataSources.tracksAPI.incrementTrackViews(id);
-                console.log(track);
                 return {
                     code: 200,
                     success: true,
