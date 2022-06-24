@@ -7,7 +7,7 @@ const resolvers = require('./resolvers');
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  //Configuring the dataSources option for our ApolloServer to make our RestDataSource API available to all resolvers from their context parameter
+  //Configuring the dataSources option for our ApolloServer to make our RestDataSource API available to all resolvers from their context paramete
   dataSources: () => {
     return {
       tracksAPI: new TracksAPI()
