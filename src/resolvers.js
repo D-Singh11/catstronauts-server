@@ -53,7 +53,11 @@ const resolvers = {
         //get all modules for a single track by calling tracks-api and using the id present in the data returned by Track.modules parent Query.track
         modules: ({id}, _, {dataSources}) => {
             return dataSources.tracksAPI.getTrackModules(id);
-        }
+        },
+
+        // get the track as first parameter of resolver function and populate the durationInSeconds fiels using track's length from rest api
+         // {length} destructures parent(first parameter of resolver which is track data returned by api) to access length
+         durationInSeconds: ({length}) => length,
     }
 };
 
