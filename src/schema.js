@@ -69,7 +69,7 @@ type Module{
     "The Module's title"
     title:String!
     "The Module's length in minutes"
-    length:Int!
+    length:Int! @deprecated(reason: "Use durationInSeconds")
     "Module's video duration, in seconds"
     durationInSeconds:Int!
     "The module's text-based description, can be in markdown format. In case of a video, it will be the enriched transcript"
