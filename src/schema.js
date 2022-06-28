@@ -40,7 +40,7 @@ type Track{
     author:Author!
     "The track's main illustration to display in track card or track page detail"
     thumbnail:String
-     "The track's approximate length to complete, in minutes"
+     "The track's approximate length to complete, in seconds"
     length:Int @deprecated(reason: "Use durationInSeconds")
     "Track's full duration, in seconds"
     durationInSeconds:Int!
@@ -68,7 +68,7 @@ type Module{
     id:ID!
     "The Module's title"
     title:String!
-    "The Module's length in minutes"
+    "The Module's length in seconds"
     length:Int! @deprecated(reason: "Use durationInSeconds")
     "Module's video duration, in seconds"
     durationInSeconds:Int!
